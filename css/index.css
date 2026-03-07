@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+.body-bg{
+    background-color: #F8FAFC;
+}
+.card-bg{
+    background-color: #ffffff;
+}
+body{
+    font-family: "Geist", sans-serif;
+}
