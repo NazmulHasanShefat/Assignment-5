@@ -30,9 +30,12 @@
     <main class="max-w-[1110px] mx-auto">
         <div
             class="filter_navigation_container rounded-md flex justify-start items-center gap-3 mt-5 py-2 border-gray-200 bg-white">
-            <button type="button" class="active_btn outline-0 hover:bg-gray-400/10 border border-slate-400 cursor-pointer text-slate-500 min-w-[100px] px-3 py-1 rounded-lg">All</button>
-            <button type="button" class="outline-0 border hover:bg-gray-400/10 border-slate-400 cursor-pointer text-slate-500 min-w-[100px] px-3 py-1 rounded-lg">Open</button>
-            <button type="button" class="outline-0 border hover:bg-gray-400/10 border-slate-400 cursor-pointer text-slate-500 min-w-[100px] px-3 py-1 rounded-lg">Closed</button>
+            <button type="button"
+                class="active_btn outline-0 hover:bg-gray-400/10 border border-slate-400 cursor-pointer text-slate-500 min-w-[100px] px-3 py-1 rounded-lg">All</button>
+            <button type="button"
+                class="outline-0 border hover:bg-gray-400/10 border-slate-400 cursor-pointer text-slate-500 min-w-[100px] px-3 py-1 rounded-lg">Open</button>
+            <button type="button"
+                class="outline-0 border hover:bg-gray-400/10 border-slate-400 cursor-pointer text-slate-500 min-w-[100px] px-3 py-1 rounded-lg">Closed</button>
         </div>
 
         <div
@@ -57,7 +60,8 @@
         </div>
         <div class="main_content min-h-screen bg-white mt-2 p-3 rounded-md border-gray-200 grid lg:grid-cols-4">
 
-            <div class="issus_card h-max max-w-[256px] bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 border-green-600">
+            <div
+                class="issus_card h-max max-w-[256px] bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 border-green-600">
                 <div class="card_indicators flex justify-between items-center py-2">
                     <img src="./assets/Open-Status.png" alt="">
                     <div class="rounded-lg bg-red-400/20 text-red-600 px-4">High</div>
@@ -68,7 +72,8 @@
                 <p class="text-slate-500 text-[12px]">The navigation menu doesn't collapse properly on mobile devices...
                 </p>
                 <div class="badge_container flex gap-4 py-3">
-                    <div class="border-2 border-[#FECACA] text-[12px] py-1 flex gap-2 items-center w-max px-2 rounded-lg bg-[#FEECEC]/50 text-[#EF4444]">
+                    <div
+                        class="border-2 border-[#FECACA] text-[12px] py-1 flex gap-2 items-center w-max px-2 rounded-lg bg-[#FEECEC]/50 text-[#EF4444]">
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 12 12"
                                 fill="none">
@@ -80,7 +85,8 @@
                         BUG
                     </div>
 
-                    <div class="border-2 border-[#FDE68A] text-[12px] py-1 flex gap-2 items-center w-max px-2 rounded-lg bg-[#FFF8DB]/50 text-[#D97706]">
+                    <div
+                        class="border-2 border-[#FDE68A] text-[12px] py-1 flex gap-2 items-center w-max px-2 rounded-lg bg-[#FFF8DB]/50 text-[#D97706]">
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 12 12"
                                 fill="none">
@@ -100,10 +106,32 @@
                     </div>
                 </div>
             </div>
-           
+
 
         </div>
     </main>
+
+    <div class="dropShadow bg-[#002C5C]/40 h-screen w-full fixed inset-0"></div>
+    <div
+        class="modal_card lg:w-[700px] w-96 bg-white rounded-md min-h-[414px] p-8 fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <h2 class="modal_title text-[24px] font-semibold">Fix broken image uploads</h2>
+        <div class="othor_details flex justify-start items-center gap-3 py-3">
+            <div class="modal_badge rounded-lg text-white text-[12px] bg-green-600 inline px-2 py-1">Opened</div>
+            <div class="dot">
+                <svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4" fill="none">
+                    <circle cx="2" cy="2" r="2" fill="#64748B" />
+                </svg>
+            </div>
+            <p class="text-slate-500 text-[12px]">Opened by Fahim Ahmed</p>
+            <div class="dot">
+                <svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4" fill="none">
+                    <circle cx="2" cy="2" r="2" fill="#64748B" />
+                </svg>
+            </div>
+            <p class="text-slate-500 text-[12px]">22/02/2026</p>
+        </div>
+    </div>
+
     <script src="./js/dashBord.js"></script>
 </body>
 
