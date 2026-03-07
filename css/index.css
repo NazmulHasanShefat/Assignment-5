@@ -9,3 +9,7 @@
 body{
     font-family: "Geist", sans-serif;
 }
+.active_btn{
+    background-color: #4A00FF;
+    color: #fff;
+}
