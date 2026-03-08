@@ -13,7 +13,10 @@ async function fetch_data(url) {
 
 async function fetch_all_issues() {
     const issues_cards_container = document.getElementById("issues_cards_container");
-    issues_cards_container.innerHTML = `loging...`;
+    issues_cards_container.innerHTML = `
+    loding...
+    `;
+
     try {
         const all_issus = await fetch_data("https://phi-lab-server.vercel.app/api/v1/lab/issues");
         const dis_total_issues = document.getElementById("dis_total_issues");
@@ -21,7 +24,7 @@ async function fetch_all_issues() {
         issues_cards_container.innerHTML = "";
         all_issus.forEach(issue => {
             const myCard = document.createElement("div");
-            myCard.className = `issues_card min-h-[256px] max-w-[265px] bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600": "border-[#A855F7]"}`;
+            myCard.className = `issues_card min-h-[256px] max-w-[265px] bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600" : "border-[#A855F7]"}`;
             myCard.innerHTML = `
                 <div class="card_indicators flex justify-between items-center py-2">
                    ${issue.status === "open" ? `<img src="./assets/Open-Status.png" alt="open">` : `<img src="./assets/closeIcon.png" alt="open">`} 
@@ -36,7 +39,7 @@ async function fetch_all_issues() {
                 </p>
                 <div class="badge_container flex gap-4 py-3">
                  ${issue.labels[0] === "bug" ?
-                     `
+                    `
                      <div
                         class="issue_badge_1 h-[23px] border-2 border-[#ffaeae] text-[10px] flex gap-2 items-center w-max px-2 rounded-xl bg-[#FECACA] text-[#EF4444]">
                         <span>
@@ -70,9 +73,9 @@ async function fetch_all_issues() {
                         HELP WANTED
                     </div>
                      `
-                     : 
-                     issue.labels[0] === "enhancement" ?
-                     `
+                    :
+                    issue.labels[0] === "enhancement" ?
+                        `
                       <div
                         class="issue_badge_1 border-3 border-[#BBF7D0] text-[10px] flex gap-2 items-center w-max px-1 rounded-lg bg-[#BBF7D0] text-[#00A96E]">
                         <span>
@@ -89,8 +92,8 @@ async function fetch_all_issues() {
                         </span>
                         ENHANCEMENT
                     </div>
-                     `: 
-                     `
+                     `:
+                        `
                       <div
                         class="issue_badge_1 border-3 border-[#a3ddff] text-[10px] flex gap-2 items-center w-max px-1 rounded-lg bg-[#bbcef7]/50 text-[#002da9]">
                         <span>
@@ -116,14 +119,12 @@ async function fetch_all_issues() {
                 </div>
             `;
             issues_cards_container.appendChild(myCard);
-            
+
         });
 
-
-
         const issue_card_title = document.querySelectorAll(".issue_card_title");
-        issue_card_title.forEach(title =>{
-            title.addEventListener("click",()=>{
+        issue_card_title.forEach(title => {
+            title.addEventListener("click", () => {
                 console.log(title.dataset.issueid)
                 openModal(Number(title.dataset.issueid));
             })
@@ -138,22 +139,22 @@ fetch_all_issues();
 
 
 
-async function openModal(modal_id){
-    const modal_data = await fetch_data(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${modal_id}`)
+async function openModal(modal_id) {
     try {
-        if(!modal_data){
+        const modal_data = await fetch_data(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${modal_id}`)
+        if (!modal_data) {
             alert("data not found");
-        }else{
+        } else {
             console.log(modal_data)
             const modal = document.createElement("div");
             const dropShadow = document.createElement("div");
             dropShadow.className = "dropShadow bg-[#002C5C]/40 h-screen w-full fixed inset-0";
             modal.className = "modal_card myclass-any lg:w-[700px] w-[90%] bg-white rounded-md min-h-[100px] lg:p-8 p-5 fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2";
-    
+
             modal.innerHTML = `
               <h2 class="modal_title text-[24px] font-semibold">${modal_data.title}</h2>
             <div class="othor_details lg:flex justify-start items-center gap-3 py-3">
-                <div class="modal_badge rounded-lg text-white text-[12px] ${modal_data.status === "open" ? "bg-green-600": "bg-purple-600"} inline px-2 py-1">${modal_data.status}</div>
+                <div class="modal_badge rounded-lg text-white text-[12px] ${modal_data.status === "open" ? "bg-green-600" : "bg-purple-600"} inline px-2 py-1">${modal_data.status}</div>
                 <p class="text-slate-500 text-[12px] pb-1 lg:pb-0 mt-3 lg:mt-0"> • Opened by ${modal_data.author}</p>
                 <p class="text-slate-500 text-[12px]"> • ${new Date(modal_data.updatedAt).getDate()}/${new Date(modal_data.updatedAt).getMonth() + 1}/${new Date(modal_data.updatedAt).getFullYear()} </p>
             </div>
@@ -161,7 +162,7 @@ async function openModal(modal_id){
             <div class="modal_badges flex items-center gap-3 py-2">
     
                 ${modal_data.labels[0] === "bug" ?
-                     `
+                    `
                      <div
                         class="issue_badge_1 border-2 border-[#ffaeae] text-[10px] flex gap-2 items-center w-max px-2 rounded-xl bg-[#FECACA] text-[#EF4444]">
                         <span>
@@ -195,9 +196,9 @@ async function openModal(modal_id){
                         HELP WANTED
                     </div>
                      `
-                     : 
-                     modal_data.labels[0] === "enhancement" ?
-                     `
+                    :
+                    modal_data.labels[0] === "enhancement" ?
+                        `
                       <div
                         class="issue_badge_1 border-3 border-[#BBF7D0] text-[10px] flex gap-2 items-center w-max px-1 rounded-lg bg-[#BBF7D0] text-[#00A96E]">
                         <span>
@@ -214,8 +215,8 @@ async function openModal(modal_id){
                         </span>
                         ENHANCEMENT
                     </div>
-                     `: 
-                     `
+                     `:
+                        `
                       <div
                         class="issue_badge_1 border-3 border-[#a3ddff] text-[10px] flex gap-2 items-center w-max px-1 rounded-lg bg-[#bbcef7]/50 text-[#002da9]">
                         <span>
@@ -255,32 +256,32 @@ async function openModal(modal_id){
             `;
             document.body.appendChild(dropShadow);
             document.body.appendChild(modal);
-       
-        //    close modal
+
+            //    close modal
             const modal_close_btn = document.querySelector(".modal_close_btn");
-            modal_close_btn.addEventListener("click",()=>{
-                  document.body.removeChild(dropShadow);
-                  document.body.removeChild(modal);
+            modal_close_btn.addEventListener("click", () => {
+                document.body.removeChild(dropShadow);
+                document.body.removeChild(modal);
             })
         }
 
 
     } catch (error) {
-        console.log("faild to fetch modal data!",error)
+        console.log("faild to fetch modal data!", error)
     }
 }
 
 async function fetchOpendIssue() {
     const issues_cards_container = document.getElementById("issues_cards_container");
-    issues_cards_container.innerHTML = "";
+    issues_cards_container.innerHTML = "loding...";
 
-    const issues = await fetch_data("https://phi-lab-server.vercel.app/api/v1/lab/issues");
-    const opendIssues = issues.filter(issue => issue.status === "open");
-    
-
-     opendIssues.forEach(issue => {
+    try {
+        const issues = await fetch_data("https://phi-lab-server.vercel.app/api/v1/lab/issues");
+        const opendIssues = issues.filter(issue => issue.status === "open");
+        issues_cards_container.innerHTML = "";
+        opendIssues.forEach(issue => {
             const myCard = document.createElement("div");
-            myCard.className = `issues_card min-h-[256px] max-w-[265px] bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600": "border-[#A855F7]"}`;
+            myCard.className = `issues_card min-h-[256px] max-w-[265px] bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600" : "border-[#A855F7]"}`;
             myCard.innerHTML = `
                 <div class="card_indicators flex justify-between items-center py-2">
                    ${issue.status === "open" ? `<img src="./assets/Open-Status.png" alt="open">` : `<img src="./assets/closeIcon.png" alt="open">`} 
@@ -295,7 +296,7 @@ async function fetchOpendIssue() {
                 </p>
                 <div class="badge_container flex gap-4 py-3">
                  ${issue.labels[0] === "bug" ?
-                     `
+                    `
                      <div
                         class="issue_badge_1 h-[23px] border-2 border-[#ffaeae] text-[10px] flex gap-2 items-center w-max px-2 rounded-xl bg-[#FECACA] text-[#EF4444]">
                         <span>
@@ -329,9 +330,9 @@ async function fetchOpendIssue() {
                         HELP WANTED
                     </div>
                      `
-                     : 
-                     issue.labels[0] === "enhancement" ?
-                     `
+                    :
+                    issue.labels[0] === "enhancement" ?
+                        `
                       <div
                         class="issue_badge_1 border-3 border-[#BBF7D0] text-[10px] flex gap-2 items-center w-max px-1 rounded-lg bg-[#BBF7D0] text-[#00A96E]">
                         <span>
@@ -348,8 +349,8 @@ async function fetchOpendIssue() {
                         </span>
                         ENHANCEMENT
                     </div>
-                     `: 
-                     `
+                     `:
+                        `
                       <div
                         class="issue_badge_1 border-3 border-[#a3ddff] text-[10px] flex gap-2 items-center w-max px-1 rounded-lg bg-[#bbcef7]/50 text-[#002da9]">
                         <span>
@@ -375,27 +376,37 @@ async function fetchOpendIssue() {
                 </div>
             `;
             issues_cards_container.appendChild(myCard);
-            
+
         });
         const issue_card_title = document.querySelectorAll(".issue_card_title");
-        issue_card_title.forEach(title =>{
-            title.addEventListener("click",()=>{
+        issue_card_title.forEach(title => {
+            title.addEventListener("click", () => {
                 console.log(title.dataset.issueid)
                 openModal(Number(title.dataset.issueid));
             })
         })
+
+    }
+
+    catch (error) {
+        console.log("faild to load opend issue");
+    }
+
+
+
 }
 
 async function fetch_closed_issue() {
-     const issues_cards_container = document.getElementById("issues_cards_container");
-     issues_cards_container.innerHTML = "";
-     const issues = await fetch_data("https://phi-lab-server.vercel.app/api/v1/lab/issues");
-     const closed_Issues = issues.filter(issue => issue.status === "closed");
+    const issues_cards_container = document.getElementById("issues_cards_container");
+    issues_cards_container.innerHTML = "loding...";
 
+    try {
+        const issues = await fetch_data("https://phi-lab-server.vercel.app/api/v1/lab/issues");
+        const closed_Issues = issues.filter(issue => issue.status === "closed");
 
-      closed_Issues.forEach(issue => {
+        closed_Issues.forEach(issue => {
             const myCard = document.createElement("div");
-            myCard.className = `issues_card min-h-[256px] max-w-[265px] bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600": "border-[#A855F7]"}`;
+            myCard.className = `issues_card min-h-[256px] max-w-[265px] bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600" : "border-[#A855F7]"}`;
             myCard.innerHTML = `
                 <div class="card_indicators flex justify-between items-center py-2">
                    ${issue.status === "open" ? `<img src="./assets/Open-Status.png" alt="open">` : `<img src="./assets/closeIcon.png" alt="open">`} 
@@ -410,7 +421,7 @@ async function fetch_closed_issue() {
                 </p>
                 <div class="badge_container flex gap-4 py-3">
                  ${issue.labels[0] === "bug" ?
-                     `
+                    `
                      <div
                         class="issue_badge_1 h-[23px] border-2 border-[#ffaeae] text-[10px] flex gap-2 items-center w-max px-2 rounded-xl bg-[#FECACA] text-[#EF4444]">
                         <span>
@@ -444,9 +455,9 @@ async function fetch_closed_issue() {
                         HELP WANTED
                     </div>
                      `
-                     : 
-                     issue.labels[0] === "enhancement" ?
-                     `
+                    :
+                    issue.labels[0] === "enhancement" ?
+                        `
                       <div
                         class="issue_badge_1 border-3 border-[#BBF7D0] text-[10px] flex gap-2 items-center w-max px-1 rounded-lg bg-[#BBF7D0] text-[#00A96E]">
                         <span>
@@ -463,8 +474,8 @@ async function fetch_closed_issue() {
                         </span>
                         ENHANCEMENT
                     </div>
-                     `: 
-                     `
+                     `:
+                        `
                       <div
                         class="issue_badge_1 border-3 border-[#a3ddff] text-[10px] flex gap-2 items-center w-max px-1 rounded-lg bg-[#bbcef7]/50 text-[#002da9]">
                         <span>
@@ -490,33 +501,37 @@ async function fetch_closed_issue() {
                 </div>
             `;
             issues_cards_container.appendChild(myCard);
-            
+
         });
 
         const issue_card_title = document.querySelectorAll(".issue_card_title");
-        issue_card_title.forEach(title =>{
-            title.addEventListener("click",()=>{
+        issue_card_title.forEach(title => {
+            title.addEventListener("click", () => {
                 console.log(title.dataset.issueid)
                 openModal(Number(title.dataset.issueid));
             })
         })
+    }
+    catch (error) {
+        console.log("faild to load closed issue data");
+    }
 
-   
+
 }
 
 // added filter event listener
 const filter_btn = document.querySelectorAll(".filter_btn");
 filter_btn.forEach(btn => {
-    btn.addEventListener("click",(e)=>{
-        filter_btn.forEach(filterbutton =>{
+    btn.addEventListener("click", (e) => {
+        filter_btn.forEach(filterbutton => {
             filterbutton.classList.remove("active_btn");
         })
         e.target.classList.add("active_btn");
-        if(e.target.dataset.filter === "all"){
+        if (e.target.dataset.filter === "all") {
             fetch_all_issues();
-        }else if(e.target.dataset.filter === "open"){
+        } else if (e.target.dataset.filter === "open") {
             fetchOpendIssue();
-        }else if(e.target.dataset.filter === "closed"){
+        } else if (e.target.dataset.filter === "closed") {
             fetch_closed_issue();
         }
     })
@@ -524,13 +539,13 @@ filter_btn.forEach(btn => {
 
 
 const issues_search_input = document.getElementById("issues_search_input");
-issues_search_input.addEventListener("input",(e)=>{
+issues_search_input.addEventListener("input", (e) => {
     search_issues(e.target.value);
 })
 
 // ignore this becouse it have in figma 
 const search_btn = document.getElementById("search_btn");
-search_btn.addEventListener("click",()=>{
+search_btn.addEventListener("click", () => {
     search_issues(issues_search_input.value);
 })
 
@@ -538,17 +553,18 @@ search_btn.addEventListener("click",()=>{
 // added search functionality
 async function search_issues(value) {
     const issues_cards_container = document.getElementById("issues_cards_container");
-    issues_cards_container.innerHTML = "";
+    issues_cards_container.innerHTML = "loding...";
     try {
         const Search_res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${value}`)
         const searchData = await Search_res.json();
         const outputObj = await searchData.data;
-        if(value === ""){
+        issues_cards_container.innerHTML = "";
+        if (value === "") {
             fetch_all_issues();
         }
-          outputObj.forEach(issue => {
+        outputObj.forEach(issue => {
             const myCard = document.createElement("div");
-            myCard.className = `issues_card min-h-[256px] max-w-[265px] bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600": "border-[#A855F7]"}`;
+            myCard.className = `issues_card min-h-[256px] max-w-[265px] bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600" : "border-[#A855F7]"}`;
             myCard.innerHTML = `
                 <div class="card_indicators flex justify-between items-center py-2">
                    ${issue.status === "open" ? `<img src="./assets/Open-Status.png" alt="open">` : `<img src="./assets/closeIcon.png" alt="open">`} 
@@ -563,7 +579,7 @@ async function search_issues(value) {
                 </p>
                 <div class="badge_container flex gap-4 py-3">
                  ${issue.labels[0] === "bug" ?
-                     `
+                    `
                      <div
                         class="issue_badge_1 h-[23px] border-2 border-[#ffaeae] text-[10px] flex gap-2 items-center w-max px-2 rounded-xl bg-[#FECACA] text-[#EF4444]">
                         <span>
@@ -597,9 +613,9 @@ async function search_issues(value) {
                         HELP WANTED
                     </div>
                      `
-                     : 
-                     issue.labels[0] === "enhancement" ?
-                     `
+                    :
+                    issue.labels[0] === "enhancement" ?
+                        `
                       <div
                         class="issue_badge_1 border-3 border-[#BBF7D0] text-[10px] flex gap-2 items-center w-max px-1 rounded-lg bg-[#BBF7D0] text-[#00A96E]">
                         <span>
@@ -616,8 +632,8 @@ async function search_issues(value) {
                         </span>
                         ENHANCEMENT
                     </div>
-                     `: 
-                     `
+                     `:
+                        `
                       <div
                         class="issue_badge_1 border-3 border-[#a3ddff] text-[10px] flex gap-2 items-center w-max px-1 rounded-lg bg-[#bbcef7]/50 text-[#002da9]">
                         <span>
@@ -643,12 +659,12 @@ async function search_issues(value) {
                 </div>
             `;
             issues_cards_container.appendChild(myCard);
-            
+
         });
 
         const issue_card_title = document.querySelectorAll(".issue_card_title");
-        issue_card_title.forEach(title =>{
-            title.addEventListener("click",()=>{
+        issue_card_title.forEach(title => {
+            title.addEventListener("click", () => {
                 console.log(title.dataset.issueid)
                 openModal(Number(title.dataset.issueid));
             })
