@@ -16,6 +16,8 @@ async function fetch_all_issues() {
     issues_cards_container.innerHTML = "";
     try {
         const all_issus = await fetch_data("https://phi-lab-server.vercel.app/api/v1/lab/issues");
+        const dis_total_issues = document.getElementById("dis_total_issues");
+        dis_total_issues.textContent = all_issus.length;
         all_issus.forEach(issue => {
             const myCard = document.createElement("div");
             myCard.className = `issues_card min-h-[256px] max-w-[265px] bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600": "border-[#A855F7]"}`;
