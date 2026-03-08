@@ -226,8 +226,8 @@ async function openModal(modal_id) {
               <h2 class="modal_title text-[24px] font-semibold">${modal_data.title}</h2>
             <div class="othor_details lg:flex justify-start items-center gap-3 py-3">
                 <div class="modal_badge rounded-lg text-white text-[12px] ${modal_data.status === "open" ? "bg-green-600" : "bg-purple-600"} inline px-2 py-1">${modal_data.status}</div>
-                <p class="text-slate-500 text-[12px] pb-1 lg:pb-0 mt-3 lg:mt-0"> • Opened by ${modal_data.author}</p>
-                <p class="text-slate-500 text-[12px]"> • ${new Date(modal_data.updatedAt).getDate()}/${new Date(modal_data.updatedAt).getMonth() + 1}/${new Date(modal_data.updatedAt).getFullYear()} </p>
+                <p class="text-slate-500 text-[16px] pb-1 lg:pb-0 mt-3 lg:mt-0"> • Opened by ${modal_data.author}</p>
+                <p class="text-slate-500 text-[16px]"> • ${new Date(modal_data.updatedAt).getDate()}/${new Date(modal_data.updatedAt).getMonth() + 1}/${new Date(modal_data.updatedAt).getFullYear()} </p>
             </div>
     
             <div class="modal_badges flex items-center gap-3 py-2">
@@ -235,7 +235,7 @@ async function openModal(modal_id) {
                 ${modal_data.labels[0] === "bug" ?
                     `
                      <div
-                        class="issue_badge_1 border-2 border-[#ffaeae] text-[10px] flex gap-2 items-center w-max px-2 rounded-xl bg-[#FECACA] text-[#EF4444]">
+                        class="issue_badge_1 border-2 border-[#ffaeae] text-[12px] flex gap-2 items-center w-max px-2 rounded-xl bg-[#FECACA] text-[#EF4444]">
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"
                                 fill="none">
@@ -335,7 +335,7 @@ async function openModal(modal_id) {
                 setTimeout(() => {
                     document.body.removeChild(dropShadow);
                     document.body.removeChild(modal);
-                }, 300);
+                }, 200);
             })
         }
 
@@ -874,7 +874,7 @@ async function search_issues(value) {
                  ${issue.labels[0] === "bug" ?
                     `
                      <div
-                        class="issue_badge_1 h-[23px] border-2 border-[#ffaeae] text-[10px] flex gap-2 items-center w-max px-2 rounded-xl bg-[#FECACA] text-[#EF4444]">
+                        class="issue_badge_1 h-[23px] border-3 border-[#ffaeae] text-[10px] flex gap-2 items-center w-max px-2 rounded-xl bg-[#FECACA] text-[#EF4444]">
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"
                                 fill="none">
