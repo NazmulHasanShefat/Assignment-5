@@ -434,7 +434,7 @@ async function fetchOpendIssue() {
         }
         opendIssues.forEach(issue => {
             const myCard = document.createElement("div");
-            myCard.className = `issues_card min-h-[256px] max-w-[265px] bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600" : "border-[#A855F7]"}`;
+            myCard.className = `issues_card min-h-[256px] lg:max-w-[265px] w-full bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600" : "border-[#A855F7]"}`;
             myCard.innerHTML = `
                 <div class="card_indicators flex justify-between items-center py-2">
                    ${issue.status === "open" ? `<img src="./assets/Open-Status.png" alt="open">` : `<img src="./assets/closeIcon.png" alt="open">`} 
@@ -635,7 +635,7 @@ async function fetch_closed_issue() {
         }
         closed_Issues.forEach(issue => {
             const myCard = document.createElement("div");
-            myCard.className = `issues_card min-h-[256px] max-w-[265px] bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600" : "border-[#A855F7]"}`;
+            myCard.className = `issues_card min-h-[256px] lg:max-w-[265px] w-full bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600" : "border-[#A855F7]"}`;
             myCard.innerHTML = `
                 <div class="card_indicators flex justify-between items-center py-2">
                    ${issue.status === "open" ? `<img src="./assets/Open-Status.png" alt="open">` : `<img src="./assets/closeIcon.png" alt="open">`} 
@@ -869,7 +869,7 @@ async function search_issues(value) {
         }
         outputObj.forEach(issue => {
             const myCard = document.createElement("div");
-            myCard.className = `issues_card min-h-[256px] max-w-[265px] bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600" : "border-[#A855F7]"}`;
+            myCard.className = `issues_card min-h-[256px] lg:max-w-[265px] w-full bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600" : "border-[#A855F7]"}`;
             myCard.innerHTML = `
                 <div class="card_indicators flex justify-between items-center py-2">
                    ${issue.status === "open" ? `<img src="./assets/Open-Status.png" alt="open">` : `<img src="./assets/closeIcon.png" alt="open">`} 
