@@ -501,11 +501,7 @@ async function fetch_closed_issue() {
    
 }
 
-
-
-
-
-
+// added filter event listener
 const filter_btn = document.querySelectorAll(".filter_btn");
 filter_btn.forEach(btn => {
     btn.addEventListener("click",(e)=>{
@@ -522,3 +518,21 @@ filter_btn.forEach(btn => {
         }
     })
 });
+
+
+const issues_search_input = document.getElementById("issues_search_input");
+issues_search_input.addEventListener("input",(e)=>{
+    search_issues(e.target.value);
+})
+
+async function search_issues(value) {
+    try {
+        const Search_res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${value}`)
+        const searchData = await Search_res.json();
+        const outputObj = await searchData.data;
+        console.log(outputObj);
+        
+    } catch (error) {
+        console.log("faild to search", error)
+    }
+}
