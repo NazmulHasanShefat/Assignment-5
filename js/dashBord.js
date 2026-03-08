@@ -93,6 +93,9 @@ async function fetch_all_issues() {
         const dis_total_issues = document.getElementById("dis_total_issues");
         dis_total_issues.textContent = all_issus.length;
         issues_cards_container.innerHTML = "";
+        if(all_issus.length === 0){
+            issues_cards_container.innerHTML = "<div class='col-span-full items-center flex justify-center'>No content found</div>";
+        }
         all_issus.forEach(issue => {
             const myCard = document.createElement("div");
             myCard.className = `issues_card min-h-[256px] lg:w-[256px] md:w-[265px] w-full bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600" : "border-[#A855F7]"}`;
@@ -426,6 +429,9 @@ async function fetchOpendIssue() {
         const issues = await fetch_data("https://phi-lab-server.vercel.app/api/v1/lab/issues");
         const opendIssues = issues.filter(issue => issue.status === "open");
         issues_cards_container.innerHTML = "";
+        if(opendIssues.length === 0){
+            issues_cards_container.innerHTML = "<div class='col-span-full items-center flex justify-center'>No content found</div>";
+        }
         opendIssues.forEach(issue => {
             const myCard = document.createElement("div");
             myCard.className = `issues_card min-h-[256px] max-w-[265px] bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600" : "border-[#A855F7]"}`;
@@ -624,6 +630,9 @@ async function fetch_closed_issue() {
         const issues = await fetch_data("https://phi-lab-server.vercel.app/api/v1/lab/issues");
         const closed_Issues = issues.filter(issue => issue.status === "closed");
         issues_cards_container.innerHTML = "";
+        if(closed_Issues.length === 0){
+            issues_cards_container.innerHTML = "<div class='col-span-full items-center flex justify-center'>No content found</div>";
+        }
         closed_Issues.forEach(issue => {
             const myCard = document.createElement("div");
             myCard.className = `issues_card min-h-[256px] max-w-[265px] bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600" : "border-[#A855F7]"}`;
@@ -854,6 +863,9 @@ async function search_issues(value) {
         issues_cards_container.innerHTML = "";
         if (value === "") {
             fetch_all_issues();
+        }
+        if(outputObj.length === 0 || !outputObj){
+            issues_cards_container.innerHTML = "<div class='col-span-full items-center flex justify-center'>No content found</div>"
         }
         outputObj.forEach(issue => {
             const myCard = document.createElement("div");
