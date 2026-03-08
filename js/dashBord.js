@@ -13,6 +13,7 @@ async function fetch_data(url) {
 
 async function fetch_all_issues() {
     const issues_cards_container = document.getElementById("issues_cards_container");
+    issues_cards_container.innerHTML = "";
     try {
         const all_issus = await fetch_data("https://phi-lab-server.vercel.app/api/v1/lab/issues");
         all_issus.forEach(issue => {
@@ -373,6 +374,13 @@ async function fetchOpendIssue() {
             issues_cards_container.appendChild(myCard);
             
         });
+        const issue_card_title = document.querySelectorAll(".issue_card_title");
+        issue_card_title.forEach(title =>{
+            title.addEventListener("click",()=>{
+                console.log(title.dataset.issueid)
+                openModal(Number(title.dataset.issueid));
+            })
+        })
 }
 
 async function fetch_closed_issue() {
@@ -481,6 +489,14 @@ async function fetch_closed_issue() {
             issues_cards_container.appendChild(myCard);
             
         });
+
+        const issue_card_title = document.querySelectorAll(".issue_card_title");
+        issue_card_title.forEach(title =>{
+            title.addEventListener("click",()=>{
+                console.log(title.dataset.issueid)
+                openModal(Number(title.dataset.issueid));
+            })
+        })
 
    
 }
