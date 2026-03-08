@@ -95,7 +95,7 @@ async function fetch_all_issues() {
         issues_cards_container.innerHTML = "";
         all_issus.forEach(issue => {
             const myCard = document.createElement("div");
-            myCard.className = `issues_card min-h-[256px] max-w-[265px] bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600" : "border-[#A855F7]"}`;
+            myCard.className = `issues_card min-h-[256px] lg:w-[256px] md:w-[265px] w-full bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600" : "border-[#A855F7]"}`;
             myCard.innerHTML = `
                 <div class="card_indicators flex justify-between items-center py-2">
                    ${issue.status === "open" ? `<img src="./assets/Open-Status.png" alt="open">` : `<img src="./assets/closeIcon.png" alt="open">`} 
@@ -331,8 +331,11 @@ async function openModal(modal_id) {
             //    close modal
             const modal_close_btn = document.querySelector(".modal_close_btn");
             modal_close_btn.addEventListener("click", () => {
-                document.body.removeChild(dropShadow);
-                document.body.removeChild(modal);
+                modal.classList.add("close");
+                setTimeout(() => {
+                    document.body.removeChild(dropShadow);
+                    document.body.removeChild(modal);
+                }, 300);
             })
         }
 

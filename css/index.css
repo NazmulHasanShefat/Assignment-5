@@ -13,3 +13,27 @@ body{
     background-color: #4A00FF;
     color: #fff;
 }
+.modal_card{
+    animation: modalin linear forwards .2s;
+}
+.close{
+    animation: close linear forwards .2s;
+}
+@keyframes modalin {
+    0%{
+        top: 45%;
+        opacity: .50;
+    }100%{
+        top: 50%;
+        opacity: 1;
+    }
+}
+@keyframes close {
+    0%{
+        top: 45%;
+        opacity: .50;
+    }100%{
+        top: 55%;
+        opacity: 0;
+    }
+}
