@@ -189,7 +189,7 @@ async function fetch_all_issues() {
 
                 <div class="author_shortInfo border-t-2 py-2 border-t-gray-200">
                  <p class="text-slate-400 text-[12px]">#${issue.id} by ${issue.author}</p>
-                 <p class="text-slate-400 text-[12px]">${new Date(issue.updatedAt).getDate()}/${new Date(issue.updatedAt).getMonth() + 1}/${new Date(issue.updatedAt).getFullYear()}</p>
+                 <p class="text-slate-400 text-[12px]">${new Date(issue.updatedAt).getDate()}/${new Date(issue.updatedAt).getMonth() + 1}/${new Date(issue.createdAt).getFullYear()}</p>
                 </div>
             `;
             issues_cards_container.appendChild(myCard);
@@ -230,7 +230,7 @@ async function openModal(modal_id) {
             <div class="othor_details lg:flex justify-start items-center gap-3 py-3">
                 <div class="modal_badge rounded-lg text-white text-[12px] ${modal_data.status === "open" ? "bg-green-600" : "bg-purple-600"} inline px-2 py-1">${modal_data.status}</div>
                 <p class="text-slate-500 text-[16px] pb-1 lg:pb-0 mt-3 lg:mt-0"> • Opened by ${modal_data.author}</p>
-                <p class="text-slate-500 text-[16px]"> • ${new Date(modal_data.updatedAt).getDate()}/${new Date(modal_data.updatedAt).getMonth() + 1}/${new Date(modal_data.updatedAt).getFullYear()} </p>
+                <p class="text-slate-500 text-[16px]"> • ${new Date(modal_data.updatedAt).getDate()}/${new Date(modal_data.createdAt).getMonth() + 1}/${new Date(modal_data.updatedAt).getFullYear()} </p>
             </div>
     
             <div class="modal_badges flex items-center gap-3 py-2">
@@ -525,7 +525,7 @@ async function fetchOpendIssue() {
 
                 <div class="author_shortInfo border-t-2 py-2 border-t-gray-200">
                  <p class="text-slate-400 text-[12px]">#${issue.id} by ${issue.author}</p>
-                 <p class="text-slate-400 text-[12px]">${new Date(issue.updatedAt).getDate()}/${new Date(issue.updatedAt).getMonth() + 1}/${new Date(issue.updatedAt).getFullYear()}</p>
+                 <p class="text-slate-400 text-[12px]">${new Date(issue.updatedAt).getDate()}/${new Date(issue.updatedAt).getMonth() + 1}/${new Date(issue.createdAt).getFullYear()}</p>
                 </div>
             `;
             issues_cards_container.appendChild(myCard);
@@ -726,7 +726,7 @@ async function fetch_closed_issue() {
 
                 <div class="author_shortInfo border-t-2 py-2 border-t-gray-200">
                  <p class="text-slate-400 text-[12px]">#${issue.id} by ${issue.author}</p>
-                 <p class="text-slate-400 text-[12px]">${new Date(issue.updatedAt).getDate()}/${new Date(issue.updatedAt).getMonth() + 1}/${new Date(issue.updatedAt).getFullYear()}</p>
+                 <p class="text-slate-400 text-[12px]">${new Date(issue.updatedAt).getDate()}/${new Date(issue.updatedAt).getMonth() + 1}/${new Date(issue.createdAt).getFullYear()}</p>
                 </div>
             `;
             issues_cards_container.appendChild(myCard);
@@ -960,7 +960,7 @@ async function search_issues(value) {
 
                 <div class="author_shortInfo border-t-2 py-2 border-t-gray-200">
                  <p class="text-slate-400 text-[12px]">#${issue.id} by ${issue.author}</p>
-                 <p class="text-slate-400 text-[12px]">${new Date(issue.updatedAt).getDate()}/${new Date(issue.updatedAt).getMonth() + 1}/${new Date(issue.updatedAt).getFullYear()}</p>
+                 <p class="text-slate-400 text-[12px]">${new Date(issue.updatedAt).getDate()}/${new Date(issue.updatedAt).getMonth() + 1}/${new Date(issue.createdAt).getFullYear()}</p>
                 </div>
             `;
             issues_cards_container.appendChild(myCard);
