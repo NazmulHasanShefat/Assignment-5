@@ -14,7 +14,78 @@ async function fetch_data(url) {
 async function fetch_all_issues() {
     const issues_cards_container = document.getElementById("issues_cards_container");
     issues_cards_container.innerHTML = `
-    loding...
+    <div class="mx-auto w-full max-w-sm rounded-md shadow-md shadow-gray-200 p-4">
+        <div class="flex animate-pulse space-x-4">
+            <div class="flex-1 space-y-4 py-1">
+            <div class="flex justify-between">
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="flex justify-start gap-3">
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-auto w-full max-w-sm rounded-md shadow-md shadow-gray-200 p-4">
+        <div class="flex animate-pulse space-x-4">
+            <div class="flex-1 space-y-4 py-1">
+            <div class="flex justify-between">
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="flex justify-start gap-3">
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-auto w-full max-w-sm rounded-md shadow-md shadow-gray-200 p-4">
+        <div class="flex animate-pulse space-x-4">
+            <div class="flex-1 space-y-4 py-1">
+            <div class="flex justify-between">
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="flex justify-start gap-3">
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-auto w-full max-w-sm rounded-md shadow-md shadow-gray-200 p-4">
+        <div class="flex animate-pulse space-x-4">
+            <div class="flex-1 space-y-4 py-1">
+            <div class="flex justify-between">
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="flex justify-start gap-3">
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            </div>
+        </div>
+    </div>
     `;
 
     try {
@@ -273,7 +344,80 @@ async function openModal(modal_id) {
 
 async function fetchOpendIssue() {
     const issues_cards_container = document.getElementById("issues_cards_container");
-    issues_cards_container.innerHTML = "loding...";
+    issues_cards_container.innerHTML = `
+     <div class="mx-auto w-full max-w-sm rounded-md shadow-md shadow-gray-200 p-4">
+        <div class="flex animate-pulse space-x-4">
+            <div class="flex-1 space-y-4 py-1">
+            <div class="flex justify-between">
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="flex justify-start gap-3">
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-auto w-full max-w-sm rounded-md shadow-md shadow-gray-200 p-4">
+        <div class="flex animate-pulse space-x-4">
+            <div class="flex-1 space-y-4 py-1">
+            <div class="flex justify-between">
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="flex justify-start gap-3">
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-auto w-full max-w-sm rounded-md shadow-md shadow-gray-200 p-4">
+        <div class="flex animate-pulse space-x-4">
+            <div class="flex-1 space-y-4 py-1">
+            <div class="flex justify-between">
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="flex justify-start gap-3">
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-auto w-full max-w-sm rounded-md shadow-md shadow-gray-200 p-4">
+        <div class="flex animate-pulse space-x-4">
+            <div class="flex-1 space-y-4 py-1">
+            <div class="flex justify-between">
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="flex justify-start gap-3">
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            </div>
+        </div>
+    </div>
+    `;
 
     try {
         const issues = await fetch_data("https://phi-lab-server.vercel.app/api/v1/lab/issues");
@@ -398,12 +542,85 @@ async function fetchOpendIssue() {
 
 async function fetch_closed_issue() {
     const issues_cards_container = document.getElementById("issues_cards_container");
-    issues_cards_container.innerHTML = "loding...";
+    issues_cards_container.innerHTML = `
+     <div class="mx-auto w-full max-w-sm rounded-md shadow-md shadow-gray-200 p-4">
+        <div class="flex animate-pulse space-x-4">
+            <div class="flex-1 space-y-4 py-1">
+            <div class="flex justify-between">
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="flex justify-start gap-3">
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-auto w-full max-w-sm rounded-md shadow-md shadow-gray-200 p-4">
+        <div class="flex animate-pulse space-x-4">
+            <div class="flex-1 space-y-4 py-1">
+            <div class="flex justify-between">
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="flex justify-start gap-3">
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-auto w-full max-w-sm rounded-md shadow-md shadow-gray-200 p-4">
+        <div class="flex animate-pulse space-x-4">
+            <div class="flex-1 space-y-4 py-1">
+            <div class="flex justify-between">
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="flex justify-start gap-3">
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-auto w-full max-w-sm rounded-md shadow-md shadow-gray-200 p-4">
+        <div class="flex animate-pulse space-x-4">
+            <div class="flex-1 space-y-4 py-1">
+            <div class="flex justify-between">
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="flex justify-start gap-3">
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            </div>
+        </div>
+    </div>
+    `;
 
     try {
         const issues = await fetch_data("https://phi-lab-server.vercel.app/api/v1/lab/issues");
         const closed_Issues = issues.filter(issue => issue.status === "closed");
-
+        issues_cards_container.innerHTML = "";
         closed_Issues.forEach(issue => {
             const myCard = document.createElement("div");
             myCard.className = `issues_card min-h-[256px] max-w-[265px] bg-white border-t-3 shadow-md shadow-gray-200 rounded-xl p-4 ${issue.status === "open" ? "border-green-600" : "border-[#A855F7]"}`;
@@ -553,7 +770,80 @@ search_btn.addEventListener("click", () => {
 // added search functionality
 async function search_issues(value) {
     const issues_cards_container = document.getElementById("issues_cards_container");
-    issues_cards_container.innerHTML = "loding...";
+    issues_cards_container.innerHTML = `
+     <div class="mx-auto w-full max-w-sm rounded-md shadow-md shadow-gray-200 p-4">
+        <div class="flex animate-pulse space-x-4">
+            <div class="flex-1 space-y-4 py-1">
+            <div class="flex justify-between">
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="flex justify-start gap-3">
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-auto w-full max-w-sm rounded-md shadow-md shadow-gray-200 p-4">
+        <div class="flex animate-pulse space-x-4">
+            <div class="flex-1 space-y-4 py-1">
+            <div class="flex justify-between">
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="flex justify-start gap-3">
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-auto w-full max-w-sm rounded-md shadow-md shadow-gray-200 p-4">
+        <div class="flex animate-pulse space-x-4">
+            <div class="flex-1 space-y-4 py-1">
+            <div class="flex justify-between">
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="flex justify-start gap-3">
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-auto w-full max-w-sm rounded-md shadow-md shadow-gray-200 p-4">
+        <div class="flex animate-pulse space-x-4">
+            <div class="flex-1 space-y-4 py-1">
+            <div class="flex justify-between">
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="h-5 rounded bg-gray-200"></div>
+            <div class="flex justify-start gap-3">
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+                    <div class="h-5 w-15 rounded-full bg-gray-200"></div>
+            </div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            <div class="h-3 rounded bg-gray-200"></div>
+            </div>
+        </div>
+    </div>
+    `;
     try {
         const Search_res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${value}`)
         const searchData = await Search_res.json();

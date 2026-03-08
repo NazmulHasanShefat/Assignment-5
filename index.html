@@ -14,7 +14,7 @@
 
 <body class="body-bg">
     <div class="login_page_container w-full flex justify-center items-center min-h-screen">
-        <div class="login_card max-w-[520px] shadow-md shadow-gray-200 p-8 bg-white">
+        <div class="login_card w-[95%] lg:w-[520px] shadow-md shadow-gray-200 p-8 bg-white">
             <div class="card_logo flex justify-center items-center"><img src="./assets/github-logo.png" alt=""></div>
             <h1 class="card_title text-center font-bold text-[24px]">Github-Issue-Tracker</h1>
             <p class="text-slate-500 text-center">Sign in to manage your issues</p>
@@ -23,13 +23,13 @@
                 <div class="input_fuild py-1">
                     <label for="userName" class="font-medium text-[16px]">Username</label>
                     <input type="text" placeholder="Enter Username" id="userName"
-                        class="border border-[#64748b69] p-2 px-3 block outline-0 rounded-md focus:border-blue-600 w-[456px] text-[16px]">
+                        class="border border-[#64748b69] p-2 px-3 block outline-0 rounded-md focus:border-blue-600 w-full text-[16px]">
                     <p class="input_messsage text-blue-400">Default: admin</p>
                 </div>
                 <div class="input_fuild py-1">
                     <label for="password" class="font-medium text-[16px]">Password</label>
                     <input type="password" placeholder="Enter Username" id="pwd"
-                        class="border border-[#64748b60] p-2 px-3 block outline-0 rounded-md focus:border-blue-600 w-[456px] text-[16px]">
+                        class="border border-[#64748b60] p-2 px-3 block outline-0 rounded-md focus:border-blue-600 w-full text-[16px]">
                     <p class="input_messsage text-blue-400">Default: admin123</p>
                 </div>
                 <button type="submit" id="submit_btn"
